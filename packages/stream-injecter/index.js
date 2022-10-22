@@ -1,7 +1,7 @@
 var Transform = require('stream').Transform;
 var assert = require('assert');
-var util = require('util');
-util.inherits(StreamInjecter, Transform);
+// var util = require('util');
+// util.inherits(StreamInjecter, Transform);
 
 class StreamInjecter {
   constructor(option) {
@@ -15,7 +15,7 @@ class StreamInjecter {
   _transform(chunk, encoding, cb) {
     var buffer = Buffer.isBuffer(chunk)
       ? chunk // already is Buffer use it
-      : new Buffer(chunk, enc);
+      : Buffer.from(chunk, encoding);
     this.memoryBuffer += buffer;
     cb();
   }

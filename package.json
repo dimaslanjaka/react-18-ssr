@@ -15,7 +15,8 @@
   "scripts": {
     "dev:client": "yarn parcel src/index.tsx --no-source-maps --log-level=warn --dist-dir .parcel",
     "dev:server": "NODE_ENV=development nodemon --exec ts-node --emit ./server.tsx",
-    "dev": "run-p dev:*"
+    "dev": "run-p dev:*",
+    "postinstall": "yarn upgrade stream-injecter"
   },
   "eslintConfig": {
     "extends": [
