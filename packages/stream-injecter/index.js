@@ -3,8 +3,9 @@ var assert = require('assert');
 // var util = require('util');
 // util.inherits(StreamInjecter, Transform);
 
-class StreamInjecter {
+class StreamInjecter extends Transform {
   constructor(option) {
+    super({ objectMode: true });
     Transform.call(this, option);
     this.matchRegExp = option.matchRegExp || /(<\/body>)/;
     this.injectString = option.inject || assert(true, 'Error! : need injectString');
