@@ -2,6 +2,11 @@
   "name": "react-ssr",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://www.webmanajemen.com/chimeraland/",
+  "repository": {
+    "url": "https://github.com/dimaslanjaka/chimeraland.git",
+    "type": "git"
+  },
   "dependencies": {
     "browser-sync": "^2.27.10",
     "koa": "^2.13.4",

@@ -1,9 +1,11 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const Home = lazy(() => import('./pages/index'));
 const Thinking = lazy(() => import('./pages/thinking'));
 const NotFound = lazy(() => import('./components/NotFound'));
+const Navbar = lazy(() => import('./components/Navbar'));
+const Footer = lazy(() => import('./components/Footer'));
 
 const ROUTES = [
   {
@@ -44,7 +46,7 @@ export default function AppRoutes() {
   }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/chimeraland">
       <Routes>
         {ROUTES.map(({ path, element }) => (
           <Route key={path} path={path} element={element} />

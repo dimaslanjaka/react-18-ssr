@@ -14,6 +14,7 @@ export default function Html({ children, title }: HtmlProps) {
       document.body.appendChild(script);
     }
   });
+
   return (
     <html lang="en">
       <head>
